@@ -15,6 +15,7 @@ import * as Constants from '../constants/Constants';
 import {
     convertCamelCaseToTitleCaseFunction
 } from '../commons/CommonMethods';
+import ChatWindowToggler from './chatbot/ChatWindowToggler';
 
 const AddInvoiceComponent = () => {
 
@@ -740,39 +741,16 @@ const AddInvoiceComponent = () => {
                     </Table> 
 
             </Container>
-            
 
-            {/* <div className='container mt-5'>
-                <div className='row'>
-                    <div className='card col-md-6 offset-md-3'>
-                        <h2 className='text-center'>{tile()}</h2>
-                        <div className='card-body'>
-                            <form>
-                                <div className='form-group mb-2'>
-                                    <input className='form-control'
-                                        value={firstName}
-                                        onChange={(e) => setFirstName(e.target.value)}
-                                        type="text" placeholder='Enter First Name' />
-                                </div>
-                                <div className='form-group mb-2'>
-                                    <input className='form-control'
-                                        value={lastName}
-                                        onChange={(e) => setLastName(e.target.value)}
-                                        type="text" placeholder='Enter Last Name' />
-                                </div>
-                                <div className='form-group mb-2'>
-                                    <input className='form-control'
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        type="email" placeholder='Enter Email' />
-                                </div>
-                                <button onClick={(e) => saveInvoice(e)} className='btn btn-success'>Save</button> {" "}
-                                <Link to={"/Invoice"} className='btn btn-danger' href="">Cancel</Link>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
+            <ChatWindowToggler 
+                isEditmode={id?true:false} 
+                invoice={invoice}
+                approvalFlowModal = {approvalFlowModal}
+                approvalFlowModalToggle = {approvalFlowModalToggle}
+                auditTrailsModal = {auditTrailsModal}
+                auditTrailsModalToggle = {auditTrailsModalToggle}
+                invoiceDate = {invoiceDate}
+            />
         </div>
     )
 }
