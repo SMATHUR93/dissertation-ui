@@ -104,7 +104,7 @@ const ChatWindow = ({isEditmode, invoice, approvalFlowModal, approvalFlowModalTo
 			headers: {
 				'Content-type': 'application/json; charset=UTF-8',
 				Authorization:
-					'Bearer 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'
+					'Bearer <OPENAPI-KEY>'
 			},
 			body: JSON.stringify(body)
 		})
@@ -244,7 +244,7 @@ const ChatWindow = ({isEditmode, invoice, approvalFlowModal, approvalFlowModalTo
 			},
 			update: {}
 		};
-		const apiToken = 'ATATT3xFfGF0Bs4S3UxpIHvorRMtoU0ke_RyXmpYT10bYUvy2SWti8rgkmF1S87GLE4wWCZdCZHEjSS93YwKuDzuOER27TZcd9ImDqlUijZqWcbX_ZfPaTGVHMC6Hbkf_hmtm5c5r1juMpjIf8fJFg77ndH7_SUAwvgShKwFM6kg2wZyugiAYjc=118730C8';
+		const apiToken = '<JIRA-KEY>';
 		const projectKey = 'KAN';
 		const summary = 'Concur CRMC Support Ticket by Chatbot '+ new Date().toDateString();
 		const description = desc;
