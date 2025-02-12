@@ -104,7 +104,7 @@ const ChatWindow = ({isEditmode, invoice, approvalFlowModal, approvalFlowModalTo
 			headers: {
 				'Content-type': 'application/json; charset=UTF-8',
 				Authorization:
-					'Bearer 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'
+					'Bearer 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'
 			},
 			body: JSON.stringify(body)
 		})
@@ -214,80 +214,6 @@ const ChatWindow = ({isEditmode, invoice, approvalFlowModal, approvalFlowModalTo
 		}
 	};
 
-	/* const createSupportTicket = (desc) => {
-		const body = {
-			fields: {
-				project: {
-					id: '10000'
-				},
-				issuetype: {
-					id: '10001'
-				},
-				summary: 'Concur CRMC Support Ticket by Chatbot',
-				description: {
-					version: 1,
-					type: 'doc',
-					content: [
-						{
-							type: 'paragraph',
-							content: [
-								{
-									type: 'text',
-									text: desc
-								}
-							]
-						}
-					]
-				},
-				labels: ['demo-desk'],
-				customfield_10021: []
-			},
-			update: {}
-		};
-		callJiraEndpoint(body);
-	};
-
-	const callJiraEndpoint = (body) => {
-		createNewJira(body)
-		.then((response) => {
-			if (response) {
-				const message = `Ticket create with id: ${response?.key} You may track the status here `;
-				const chatbotResponse = {
-					isUser: false,
-					message: message,
-					url: `https://2021mt93645.atlassian.net/browse/${response?.key}`
-				};
-				setMessageList([...messageList, chatbotResponse]);
-				setIsTyping(false);
-			}
-		}).catch((err) => {
-			console.log(err);
-		});
-	};
-
-	async function createNewJira(body) {
-		try {
-			const token = btoa(
-				'2021MT93645@wilp.bits-pilani.ac.in : ATATT3xFfGF0i2HW77APxCczxave-ZnitiuiyGzT-rk3OJOQzyB036Upe6jqRsAh7ZN_SvtuPuOADftJbH7MusAiNVdDFi3V9bBpJWy3cpeb4f6AtVrN-0Ww2nKLLkeC2GdFyX8RGokutVWBuyStVzKnkSzZXulcfS-IVLK6wXyC2rbk08c3qOA=B14AAE35'
-			);
-			const headers = {
-				'Content-type': 'application/json',
-				Accept: 'application/json',
-				'Access-Control-Allow-Origin': '*',
-				Authorization: `Basic ${token}`
-			};
-			const response = await fetch('https://2021mt93645.atlassian.net/rest/api/3/issue', {
-				method: 'POST',
-				body: JSON.stringify(body),
-				headers: headers
-			});
-			const responseJson = await response.json();
-			return responseJson;
-		} catch (err) {
-			console.log(err.message);
-		}
-	} */
-
 	const createSupportTicket = (desc) => {
 		const body = {
 			fields: {
@@ -318,7 +244,7 @@ const ChatWindow = ({isEditmode, invoice, approvalFlowModal, approvalFlowModalTo
 			},
 			update: {}
 		};
-		const apiToken = 'ATATT3xFfGF0FwCzMYomnp4xQOskGEAE6VUP0Ik0SUrXSfF9EtrT-f4os9qx6xJmoNO68IGgkmVh9Gjhd4E9Aeo3QREmbnJt4bZ3LVce-mrs9NCWWz9hlws4LFvytpc9G0mB0-PlEJBTabD8jYa_bxrG1fOcWrfuDMEGz8cQ2hzD5dMyANbNbUM=FBE1C832';
+		const apiToken = 'ATATT3xFfGF0Bs4S3UxpIHvorRMtoU0ke_RyXmpYT10bYUvy2SWti8rgkmF1S87GLE4wWCZdCZHEjSS93YwKuDzuOER27TZcd9ImDqlUijZqWcbX_ZfPaTGVHMC6Hbkf_hmtm5c5r1juMpjIf8fJFg77ndH7_SUAwvgShKwFM6kg2wZyugiAYjc=118730C8';
 		const projectKey = 'KAN';
 		const summary = 'Concur CRMC Support Ticket by Chatbot '+ new Date().toDateString();
 		const description = desc;

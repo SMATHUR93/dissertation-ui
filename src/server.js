@@ -66,9 +66,6 @@ app.post('/create-jira-ticket', async (req, res) => {
 function authenticateUser(user, password)
 {
     var token = user + ":" + password;
-
-    // Should i be encoding this value????? does it matter???
-    // Base64 Encoding -> btoa
     var hash = btoa(token); 
     return "Basic " + hash;
 }
